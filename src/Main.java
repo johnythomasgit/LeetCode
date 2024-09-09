@@ -5,13 +5,31 @@ import java.util.List;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        EncodeDecodeTest encoder = new EncodeDecodeTest();
-        List<String> inputList = Arrays.asList(new String[]{"johny", "bla,bla"});
-        String encodedString = encoder.encode(inputList);
-        System.out.println("encoded string===> "+ encodedString);
-        List<String> decodedList = encoder.decode(encodedString);
-        System.out.println("decoded list===> "+ decodedList);
-
+        char[][] board = {
+                {'1', '2', '.', '.', '3', '.', '.', '.', '.'},
+                {'4', '.', '.', '5', '.', '.', '.', '.', '.'},
+                {'.', '9', '1', '.', '.', '.', '.', '.', '3'},
+                {'5', '.', '.', '.', '6', '.', '.', '.', '4'},
+                {'.', '.', '.', '8', '.', '3', '.', '.', '5'},
+                {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+                {'.', '.', '.', '.', '.', '.', '2', '.', '.'},
+                {'.', '.', '.', '4', '1', '9', '.', '.', '8'},
+                {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
+        };
+        char[][] mediumSudokuBoard = {
+                {'5', '.', '.', '.', '.', '.', '.', '8', '.'},
+                {'.', '.', '9', '6', '.', '.', '.', '.', '.'},
+                {'8', '.', '6', '.', '.', '3', '.', '.', '.'},
+                {'.', '4', '.', '.', '7', '.', '.', '.', '2'},
+                {'.', '.', '.', '5', '.', '8', '.', '.', '.'},
+                {'1', '.', '.', '.', '6', '.', '.', '3', '.'},
+                {'.', '.', '.', '8', '.', '.', '7', '.', '4'},
+                {'.', '.', '.', '.', '.', '6', '5', '.', '.'},
+                {'.', '2', '.', '.', '.', '.', '.', '.', '9'}
+        };
+        SudokuTest test = new SudokuTest();
+//        test.isValidSudoku(sudokuBoard);
+        System.out.println("isValidSudoku====>"+test.isValidSudoku(board));
     }
 
 }
